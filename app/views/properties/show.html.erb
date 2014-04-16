@@ -22,8 +22,20 @@
 <div class="col-md-3 pull-right">
   <div id="price-info">
     <p>From</p>
-   <h4>$<%= @property.price %></h4>
-   <% form_for @reservation
+   <h4>$<%= @property.price %> per night</h4>
+    <%= form_for @reservation, url: reservations_path do |f| %>
+      <div class="form-group pull-right margin-right">
+        <%= f.label :start_date %>
+        <%= f.date_field :start_date %>
+      </div>
+      <div class="form-group pull-right margin-right">
+        <%= f.label :end_date %>
+        <%= f.date_field :end_date %>
+      </div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :property_id, value: @property.id %>
+      <%= f.submit "Book it", class: 'btn btn-warning' %>
+   <% end %>
  </div>
   <div id="owner-info">
    <%= image_tag("original.jpg", class: "img-responsive img-rounded", id: "picture") %>
