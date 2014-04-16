@@ -1,0 +1,5 @@
+<p><%= @user.name %>,</p>
+
+<p>Thanks for your reservation at <%= @reservation.property.title %>.</p>
+
+<p><%= link_to "Property page", property_url(@reservation.property) %></p>

@@ -9,6 +9,14 @@ class UserMailer < ActionMailer::Base
   def signup_confirmation(user)
     @user = user
 
-    mail to: @user.email, url:
+    mail to: @user.email, subject: "Thanks for signing up!"
   end
+
+  def reservation_confirmation(reservation)
+    @user = reservation.user
+    @reservation = reservation
+
+    mail to: @user.email, subject: "Reservation confirmed!"
+  end
+
 end
