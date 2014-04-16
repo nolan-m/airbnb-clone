@@ -1,0 +1,7 @@
+<% content_for(:title, "Properties") %>
+
+<h1>Properties</h1>
+
+<% @properties.each do |property| %>
+  <%= link_to property.title, property_path(property) %>
+<% end %>

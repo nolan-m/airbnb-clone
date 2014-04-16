@@ -1,0 +1,48 @@
+#main {
+  margin-top: 60px;
+}
+
+#white {
+  color: white;
+}
+#content {
+  width: 65%;
+  border-style:solid;
+  border-width:1px;
+  border-radius:10px;
+  padding: 20px 0px 20px 0px;
+  margin-right: 5px;
+}
+#description {
+
+}
+#details-table {
+  width: 100%;
+  border-radius: 10px;
+}
+#owner-info {
+  border-style:solid;
+  border-width: 1px;
+  margin-left: 4px;
+  border-radius:10px;
+  padding: 10px 5px 10px 10px;
+}
+.info {
+  font-weight: bold;
+  text-align: right;
+}
+#picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+div#price-info {
+  text-align: left;
+  padding-left: 5px;
+  border-color: black;
+  border-style:solid;
+  border-width: 1px;
+  margin-left: 4px;
+  border-radius:10px;
+  margin-bottom: 5px;
+}

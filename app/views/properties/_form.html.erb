@@ -1,0 +1,22 @@
+<%= render 'layouts/errors', object: @property %>
+
+
+<%= form_for @property do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :description, cols: 60, rows: 10, placeholder: "Description" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :city, placeholder: "City" %>
+  </div>
+  <div class="form-group">
+    <%= f.select :state, us_states %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :price, placeholder: "Price" %>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit class: "btn btn-success" %>
+<% end %>

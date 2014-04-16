@@ -1,0 +1,37 @@
+<% content_for(:title, "#{@property.title}") %>
+
+
+<h1><%= @property.title %></h1> <h4>$<%= @property.price %></h4>
+<div class="row">
+  <div class="col-md-9" id="content">
+    <div class="col-md-5" id="description">
+      <%= @property.description %>
+    </div>
+    <div class="col-md-4 pull-right" id="details">
+      <table class="table-striped table-bordered pull-right" id="details-table">
+        <tr><td>City: </td><td class="info"><%= @property.city %></td></tr>
+        <tr><td>State: </td><td class="info"><%= @property.state %></td></tr>
+        <tr><td>Check In: </td><td class="info">3:00 PM</td></tr>
+        <tr><td>Check Out: </td><td class="info">12:00 PM</td></tr>
+        <tr><td>Cleaning Fee: </td><td class="info">$10</td></tr>
+        <tr><td>Security Deposit: </td><td class="info">$150</td></tr>
+        <tr><td>Pet Owner: </td><td class="info">Dog(s)</td></tr>
+      </table>
+    </div>
+  </div>
+<div class="col-md-3 pull-right">
+  <div id="price-info">
+    <p>From</p>
+   <h4>$<%= @property.price %></h4>
+   <% form_for @reservation
+ </div>
+  <div id="owner-info">
+   <%= image_tag("original.jpg", class: "img-responsive img-rounded", id: "picture") %>
+   <h4><%= @property.user.name %></h4>
+ </div>
+
+
+</div>
+
+
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title)+" | Futon Palace" : "Futon Palace" %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <div class="container">
+    <div class="navbar navbar-default navbar-fixed-top">
+    <%= link_to "Home", root_url, class: "navbar-brand pull-left" %>
+    <% if user_signed_in? %>
+      <%= link_to "Add Listing", new_property_path, class: "navbar-text pull-right btn-xs btn-warning" %>
+      <%= link_to "Log Out", destroy_user_session_path, method: "delete", class: "navbar-text pull-right" %>
+      <div class="navbar-text pull-right">
+        Logged in as &nbsp; <%= link_to current_user.name, user_path(current_user), id: "white" %>
+      </div>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "navbar-text pull-right" %>
+      <%= link_to "Log In", new_user_session_path, class: "navbar-text pull-right" %>
+    <% end %>
+  </div>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</div>
+</body>
+</html>
