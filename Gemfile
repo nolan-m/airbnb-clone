@@ -11,7 +11,7 @@ gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
 gem 'paperclip', '~> 4.1'
 gem 'devise'
-
+gem 'textacular'
 
 
 group :development do

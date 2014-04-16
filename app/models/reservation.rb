@@ -10,7 +10,6 @@ class Reservation < ActiveRecord::Base
     current_reservations = Reservation.where(:property_id => self.property_id)
     current_reservations.each do |reservation|
       if self.start_date < reservation.end_date && self.end_date > reservation.start_date && self.end_date < reservation.end_date && self.end_date > reservation.start_date
-        errors.add(:base, "Date reserved")
         return false
       end
     end

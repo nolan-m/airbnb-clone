@@ -63,3 +63,7 @@ div#price-info {
   font-weight: bold;
   color: red;
 }
+
+.margin-high {
+  margin-top: 20px;
+}

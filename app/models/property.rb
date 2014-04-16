@@ -3,4 +3,6 @@ class Property < ActiveRecord::Base
   has_many :reservations
 
   validates :title, :description, :city, :state, :price, presence: true
+
+
 end

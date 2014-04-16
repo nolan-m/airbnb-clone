@@ -1,7 +1,33 @@
 <% content_for(:title, "Properties") %>
 
-<h1>Properties</h1>
+<%= form_tag properties_path, method: :get, class: 'margin-high' %>
+<%= label_tag "Search" %>
+<%= text_field_tag :query %>
+<%= submit_tag "Submit", class: "btn btn-primary front" %>
 
-<% @properties.each do |property| %>
-  <%= link_to property.title, property_path(property) %>
+<% if @city_results.count != 0 || @state_results.count != 0 %>
+  <h3>Search results containing '<%= @search_term %>':</h3>
+  <% if @city_results.count != 0 %>
+    <h4>City Search Results:</h4>
+    <ul>
+      <% @city_results.each do |result| %>
+        <li><%= link_to result.title, property_path(result) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if @state_results.count != 0 %>
+    <h4>State Search Results:</h4>
+    <ul>
+      <% @state_results.each do |result| %>
+        <li><%= link_to result.title, property_path(result) %></li>
+      <% end %>
+    </ul>
+  <% end %>
 <% end %>
+<%= flash[:results] %>
+
+  <h1>Properties</h1>
+
+  <% @properties.each do |property| %>
+    <%= link_to property.title, property_path(property) %>
+  <% end %>
