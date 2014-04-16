@@ -59,3 +59,7 @@ div#price-info {
   padding: px;
   margin: 0px;
 }
+.blocked {
+  font-weight: bold;
+  color: red;
+}

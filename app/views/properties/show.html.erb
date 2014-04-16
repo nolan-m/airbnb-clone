@@ -1,4 +1,5 @@
 <% content_for(:title, "#{@property.title}") %>
+<%= render 'layouts/errors', object: @reservation %>
 
 
 <h1><%= @property.title %></h1> <h4>$<%= @property.price %></h4>
@@ -36,6 +37,7 @@
       <%= f.hidden_field :property_id, value: @property.id %>
       <%= f.submit "Book it", class: 'btn btn-warning margin-bottom' %>
    <% end %>
+   <div class="blocked"><%= flash[:blocked] %></div>
  </div>
   <div id="owner-info">
    <%= image_tag("original.jpg", class: "img-responsive img-rounded", id: "picture") %>

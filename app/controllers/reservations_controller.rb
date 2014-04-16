@@ -30,7 +30,8 @@ class ReservationsController < ApplicationController
       flash[:notice] = "Reservation created!"
       redirect_to root_path
     else
-      render 'new'
+      flash[:blocked] = "Time period BLOCKED"
+      redirect_to :back
     end
   end
 
