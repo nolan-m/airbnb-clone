@@ -5,6 +5,13 @@
 <%= text_field_tag :query %>
 <%= submit_tag "Submit", class: "btn btn-primary front" %>
 
+<% if params[:query] %>
+  <% if @city_results.count == 0 && @state_results.count == 0 %>
+    <p>No results found.</p>
+    <% end %>
+<% end %>
+
+
 <% if @city_results.count != 0 || @state_results.count != 0 %>
   <h3>Search results containing '<%= @search_term %>':</h3>
   <% if @city_results.count != 0 %>

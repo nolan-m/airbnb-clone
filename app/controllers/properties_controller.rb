@@ -6,7 +6,6 @@ class PropertiesController < ApplicationController
     @search_term = params[:query]
     @city_results = Property.basic_search(:city => params[:query])
     @state_results = Property.basic_search(:state => params[:query])
-
   end
 
   def show
