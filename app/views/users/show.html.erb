@@ -34,4 +34,35 @@
 <div class="col-md-8 content padding-sides">
   <h3>User Bio:</h3>
   <p><%= @user.bio %></p>
+
+
+<% if current_user == @user %>
+  <div class="row padding-sides">
+    <h4>Upcoming Reservations</h4>
+    <ul>
+    <% @user.upcoming.each do |reservation| %>
+      <li><%= link_to reservation.property.title, property_path(reservation.property) %> in <%= reservation.property.city %>, <%= reservation.property.state %></li>
+        <ul>
+          <li>Check in: <%= reservation.start_date.strftime("%m/%d/%Y") %> | Check out: <%= reservation.end_date.strftime("%m/%d/%Y") %></li>
+        </ul>
+    <% end %>
+  </ul>
+  </div>
+  <div class="row padding-sides">
+    <h4>Past Reservations</h4>
+    <ul>
+    <% @user.past.each do |reservation| %>
+      <li><%= link_to reservation.property.title, property_path(reservation.property) %> in <%= reservation.property.city %>, <%= reservation.property.state %></li>
+        <ul>
+          <li>Check in: <%= reservation.start_date.strftime("%m/%d/%Y") %> | Check out: <%= reservation.end_date.strftime("%m/%d/%Y") %></li>
+        </ul>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
+
+
 </div>
+
+
+

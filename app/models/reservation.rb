@@ -15,7 +15,6 @@ class Reservation < ActiveRecord::Base
     end
   end
 
-
   def reservation_message
     UserMailer.reservation_confirmation(self).deliver
   end

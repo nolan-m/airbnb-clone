@@ -17,4 +17,23 @@ class User < ActiveRecord::Base
     UserMailer.signup_confirmation(self).deliver
   end
 
+  def upcoming
+    upcoming = []
+    self.reservations.each do |reservation|
+      if reservation.start_date > Time.now
+        upcoming << reservation
+      end
+    end
+    upcoming
+  end
+
+  def past
+    upcoming = []
+    self.reservations.each do |reservation|
+      if reservation.start_date < Time.now
+        upcoming << reservation
+      end
+    end
+    upcoming
+  end
 end
