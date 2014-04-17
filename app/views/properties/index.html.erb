@@ -4,7 +4,7 @@
 <%= label_tag "Search" %>
 <%= text_field_tag :query %>
 <%= submit_tag "Submit", class: "btn btn-primary front" %>
-
+<div class="col-md-6 clear-left pull-right">
 <% if params[:query] %>
   <% if @city_results.count == 0 && @state_results.count == 0 %>
     <p>No results found.</p>
@@ -32,10 +32,15 @@
   <% end %>
 <% end %>
 <%= flash[:results] %>
-
+</div>
+<div class="col-md-6 margin-high">
+  <%= render 'main_carousel' %>
+</div>
+<div class="col-md-6 clear-left">
   <h1>Properties</h1>
 <ul>
   <% @properties.each do |property| %>
     <li><%= link_to property.title, property_path(property) %></li>
   <% end %>
 </ul>
+</div>

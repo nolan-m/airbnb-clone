@@ -113,6 +113,12 @@ $( document ).ready(function() {
     $('.alert').removeClass('hide').show().delay(1000).addClass("in").fadeOut(3500);
   });
 
+
+  $('.carousel').carousel({
+    interval: 5000
+  });
+
+
 });
 }
 

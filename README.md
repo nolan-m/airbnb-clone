@@ -21,4 +21,3 @@ User Stories
 
 * DONE As a property owners, I don't want users to be able to double book dates.
 
-As a property owner, I want to set my property as available for specific days.

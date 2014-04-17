@@ -38,15 +38,16 @@
    <div class="blocked"><%= flash[:blocked] %></div>
  </div>
   <div id="owner-info">
+   <h4>Owner:</h4>
    <%= image_tag(@property.user.avatar(:medium), class: "img-responsive img-rounded", id: "picture") %>
-   <h4><%= @property.user.name %></h4>
+   <h4><%= link_to @property.user.name, user_path(@property.user) %></h4>
  </div>
 </div>
+<div class="col-md-6 margin-high">
+  <%= render 'carousel' %>
+</div>
 <% if current_user == @property.user %>
-<div class="col-md-3 margin-high">
-<% @property.pictures.each do |picture| %>
-  <%= image_tag(picture.image(:large)) %>
-<% end %>
+<div class="col-md-3 margin-high clear-left">
  <%= render 'pic_form' %>
 </div>
 <% end %>

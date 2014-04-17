@@ -92,3 +92,6 @@ div#price-info {
 .clear-left {
   clear:left;
 }
+.margin-low {
+  margin-bottom: 15px;
+}

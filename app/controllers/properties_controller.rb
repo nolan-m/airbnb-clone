@@ -1,6 +1,7 @@
 class PropertiesController < ApplicationController
 
   def index
+    @pictures = Picture.all
     @properties = Property.all
     @property = Property.new
     @search_term = params[:query]
