@@ -54,7 +54,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="377" y="87" name="properties">
+<table x="445" y="68" name="properties">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -84,7 +84,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="598" y="99" name="pictures">
+<table x="742" y="106" name="pictures">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -117,11 +117,15 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="properties" row="id" />
 </row>
+<row name="reservation_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="reservations" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="317" y="438" name="reservations">
+<table x="357" y="468" name="reservations">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>

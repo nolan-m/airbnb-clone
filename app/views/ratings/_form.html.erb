@@ -1,0 +1,4 @@
+<%= form_for @rating, url: rating_path(@rating), method: :patch, remote: :true do |f| %>
+  <%= f.text_area :review, cols: "50", rows: "6", placeholder: "Add Review", class: "form-group terrible" %>
+  <%= f.submit "Submit Review", class: "btn btn-success btn-sm block terrible" %>
+<% end %>

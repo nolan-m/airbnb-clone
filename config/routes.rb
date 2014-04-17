@@ -4,4 +4,5 @@ Airbnb::Application.routes.draw do
  resources :users
  resources :properties
  resources :reservations
+ resources :ratings
 end

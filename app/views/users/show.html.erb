@@ -9,7 +9,7 @@
         <% end %>
       <% else %>
       <%= image_tag(@user.avatar.url(:medium)) %>
-        <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
+        <%= form_for @user, url: user_path, html: { :multipart => true }  do |f| %>
         <%= f.label "Profile Picture" %>
         <%= f.file_field :avatar %>
         <%= f.submit "Update Avatar", class: "btn btn-warning btn-sm margin-high" %>
@@ -55,14 +55,24 @@
       <li><%= link_to reservation.property.title, property_path(reservation.property) %> in <%= reservation.property.city %>, <%= reservation.property.state %></li>
         <ul>
           <li>Check in: <%= reservation.start_date.strftime("%m/%d/%Y") %> | Check out: <%= reservation.end_date.strftime("%m/%d/%Y") %></li>
+          <% if reservation.ratings.count == 0 %>
+            <%= form_for @rating, url: ratings_path, method: :post do |f| %>
+              <div class="row lead">
+                <div id="stars" class="starrr"></div>
+                <%= f.hidden_field :score, id: "score" %>
+                <%= f.hidden_field :user_id, value: @user.id %>
+                <%= f.hidden_field :property_id, value: reservation.property.id %>
+                <%= f.hidden_field :reservation_id, value: reservation.id %>
+                <%= f.submit "Rate", class: "btn btn-warning btn-xs" %>
+              </div>
+            <% end %>
+          <% end %>
+          <% if reservation.ratings.first != nil %>
+            <%= link_to "Review Your Stay", edit_rating_path(reservation.ratings.first), id: "new_rating", remote: true, class: "btn btn-warning btn-xs" %>
+          <% end %>
         </ul>
     <% end %>
   </ul>
   </div>
 <% end %>
-
-
 </div>
-
-
-

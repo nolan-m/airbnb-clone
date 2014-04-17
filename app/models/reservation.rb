@@ -2,6 +2,8 @@ class Reservation < ActiveRecord::Base
   validates :end_date, :start_date, presence: :true
   belongs_to :user
   belongs_to :property
+  has_many :ratings
+
   after_create :reservation_message
   before_create :block_out
 

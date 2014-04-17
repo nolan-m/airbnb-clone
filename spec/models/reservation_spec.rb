@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Reservation do
   it { should belong_to :user }
   it { should belong_to :property }
+  it { should have_many :ratings }
   describe 'block_out' do
     it 'should not allow users to make a reservation during block_out period' do
       user = FactoryGirl.create(:user)
