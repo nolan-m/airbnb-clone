@@ -1,0 +1,15 @@
+<h1><%= @user.name %></h1>
+<% if @user.avatar_file_name.nil? %>
+    <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
+      <%= f.label "Profile Picture" %>
+      <%= f.file_field :avatar %>
+      <%= f.submit "Add Profile Pic!", class: "btn btn-success btn-sm margin-high" %>
+    <% end %>
+  <% else %>
+  <%= image_tag(@user.avatar.url(:small)) %>
+    <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
+    <%= f.label "Profile Picture" %>
+    <%= f.file_field :avatar %>
+    <%= f.submit "Update Avatar", class: "btn btn-warning btn-sm margin-high" %>
+    <% end %>
+<% end %>

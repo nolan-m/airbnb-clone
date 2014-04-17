@@ -11,6 +11,8 @@ User Stories
 
 * DONE As a user, I want to search for properties by location.
 
+* DONE As a user, I want to be able to post a profile pic.
+
 As a user, I want to rate and review my past stays at properties.
 
 As a user, I want to see an owners profile page with information about them.

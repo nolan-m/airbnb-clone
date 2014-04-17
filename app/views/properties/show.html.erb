@@ -1,8 +1,8 @@
 <% content_for(:title, "#{@property.title}") %>
 
-<h1><%= @property.title %></h1> <h4>$<%= @property.price %></h4>
+<h1><%= @property.title %></h1>
 <div class="row">
-  <div class="col-md-9" id="content">
+  <div class="col-md-9 content">
     <div class="col-md-5" id="description">
       <%= @property.description %>
     </div>
@@ -41,9 +41,13 @@
    <%= image_tag("original.jpg", class: "img-responsive img-rounded", id: "picture") %>
    <h4><%= @property.user.name %></h4>
  </div>
-
-
+</div>
+<div class="col-md-9 margin-high content">
+  <div class="margin-left">
+    <% @property.ratings.each do |rating| %>
+      <p><%= rating %></p>
+    <% end %>
+  </div>
+</div>
 </div>
 
-
-</div>

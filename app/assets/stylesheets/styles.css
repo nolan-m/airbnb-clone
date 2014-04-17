@@ -5,7 +5,7 @@
 #white {
   color: white;
 }
-#content {
+.content {
   width: 65%;
   border-style:solid;
   border-width:1px;
@@ -14,7 +14,7 @@
   margin-right: 5px;
 }
 #description {
-
+  width: 65%;
 }
 #details-table {
   width: 100%;
@@ -66,4 +66,8 @@ div#price-info {
 
 .margin-high {
   margin-top: 20px;
+}
+
+.margin-left {
+  margin-left: 15px;
 }
