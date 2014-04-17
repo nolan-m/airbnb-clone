@@ -6,6 +6,7 @@
   color: white;
 }
 .content {
+  text-align: left;
   width: 65%;
   border-style:solid;
   border-width:1px;
@@ -70,4 +71,12 @@ div#price-info {
 
 .margin-left {
   margin-left: 15px;
+}
+
+.block {
+  display: block;
+}
+
+.padding-sides {
+  padding: 0px 10px 10px 10px;
 }

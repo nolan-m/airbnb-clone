@@ -1,15 +1,37 @@
 <h1><%= @user.name %></h1>
-<% if @user.avatar_file_name.nil? %>
-    <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
-      <%= f.label "Profile Picture" %>
-      <%= f.file_field :avatar %>
-      <%= f.submit "Add Profile Pic!", class: "btn btn-success btn-sm margin-high" %>
+<% if current_user == @user %>
+  <div class="col-md-4">
+    <% if @user.avatar_file_name.nil? %>
+        <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
+          <%= f.label "Profile Picture" %>
+          <%= f.file_field :avatar %>
+          <%= f.submit "Add Profile Pic!", class: "btn btn-success btn-sm margin-high" %>
+        <% end %>
+      <% else %>
+      <%= image_tag(@user.avatar.url(:medium)) %>
+        <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
+        <%= f.label "Profile Picture" %>
+        <%= f.file_field :avatar %>
+        <%= f.submit "Update Avatar", class: "btn btn-warning btn-sm margin-high" %>
+        <% end %>
     <% end %>
-  <% else %>
-  <%= image_tag(@user.avatar.url(:small)) %>
-    <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
-    <%= f.label "Profile Picture" %>
-    <%= f.file_field :avatar %>
-    <%= f.submit "Update Avatar", class: "btn btn-warning btn-sm margin-high" %>
+    <% if @user.location.nil? %>
+      <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
+        <%= f.text_field :location, placeholder: "Enter Location", class: "margin-high" %>
+        <%= f.submit "Submit location", class: "btn btn-success btn-sm block margin-high" %>
+      <% end %>
     <% end %>
+    <% if @user.bio.nil? %>
+        <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
+          <%= f.text_area :bio, cols: "60", rows: "10", placeholder: "Add Bio", class: "margin-high" %>
+          <%= f.submit "Submit bio", class: "btn btn-success btn-sm block" %>
+        <% end %>
+    <% end %>
+  </div>
 <% end %>
+<h1 class="pull-">Hey, I'm <%= @user.name %>!</h1>
+<h5><%= @user.location %> | Member since <%= @user.created_at.strftime("%B %Y") %>  </h5>
+<div class="col-md-8 content padding-sides">
+  <h3>User Bio:</h3>
+  <p><%= @user.bio %></p>
+</div>

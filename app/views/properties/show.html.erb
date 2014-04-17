@@ -38,7 +38,7 @@
    <div class="blocked"><%= flash[:blocked] %></div>
  </div>
   <div id="owner-info">
-   <%= image_tag("original.jpg", class: "img-responsive img-rounded", id: "picture") %>
+   <%= image_tag(@property.user.avatar(:medium), class: "img-responsive img-rounded", id: "picture") %>
    <h4><%= @property.user.name %></h4>
  </div>
 </div>

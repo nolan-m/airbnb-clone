@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :properties
   has_many :reservations
   has_many :ratings
-  has_attached_file :avatar, :styles => { small: "100x100>", medium: "250x250>" }
+  has_attached_file :avatar, :styles => { small: "100x100>", medium: "250x250#" }
 
   validates_attachment_content_type :avatar, :content_type =>
   ["image/jpg", "image/jpeg", "image/png"]
