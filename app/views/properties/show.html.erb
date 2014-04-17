@@ -42,10 +42,32 @@
    <h4><%= @property.user.name %></h4>
  </div>
 </div>
-<div class="col-md-9 margin-high content">
+<% if current_user == @property.user %>
+<div class="col-md-3 margin-high">
+<% @property.pictures.each do |picture| %>
+  <%= image_tag(picture.image(:large)) %>
+<% end %>
+ <%= render 'pic_form' %>
+</div>
+<% end %>
+<div class="col-md-9 margin-high content clear-left">
   <div class="margin-left">
-    <% @property.ratings.each do |rating| %>
-      <p><%= rating %></p>
+    <h4>Reviews</h4>
+     <% @property.ratings.each do |rating| %>
+       <div class='col-md-11 review'>
+          <%= image_tag(rating.user.avatar.url(:small)) %>
+          <p><%= rating.user.name %> says:</p>
+          <% stars = "<span class='glyphicon glyphicon-star'></span>".html_safe %>
+          <% rating.score.times do %>
+            <%= stars %>
+          <% end %>
+          <% empty = "<span class='glyphicon glyphicon-star-empty'></span>".html_safe %>
+          <% empty_stars = 5 - rating.score %>
+          <% empty_stars.times do %>
+            <%= empty %>
+          <% end %>
+          <p><%= rating.review %></p>
+      </div>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,5 @@
+<%= form_for [@property, @picture], url: property_pictures_path(@property, @picture), method: :post do |f| %>
+  <%= f.hidden_field :property_id, value: @property.id %>
+  <%= f.file_field :image %>
+  <%= f.submit "Add Pic for your Property!", class: "btn btn-success btn-sm margin-high" %>
+<% end %>

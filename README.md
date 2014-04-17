@@ -13,11 +13,11 @@ User Stories
 
 * DONE As a user, I want to be able to post a profile pic.
 
-As a user, I want to rate and review my past stays at properties.
+* DONE As a user, I want to rate and review my past stays at properties.
 
-As a user, I want to see an owners profile page with information about them.
+* DONE As a user, I want to see an owners profile page with information about them.
 
-As a property owner, I want to list my property with details and photos.
+* DONE As a property owner, I want to list my property with details and photos.
 
 * DONE As a property owners, I don't want users to be able to double book dates.
 

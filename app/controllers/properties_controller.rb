@@ -10,6 +10,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @picture = Picture.new
     @reservation = Reservation.new
   end
 

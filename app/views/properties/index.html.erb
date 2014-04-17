@@ -34,7 +34,8 @@
 <%= flash[:results] %>
 
   <h1>Properties</h1>
-
+<ul>
   <% @properties.each do |property| %>
-    <%= link_to property.title, property_path(property) %>
+    <li><%= link_to property.title, property_path(property) %></li>
   <% end %>
+</ul>
