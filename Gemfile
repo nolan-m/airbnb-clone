@@ -12,7 +12,7 @@ gem 'jquery-turbolinks'
 gem 'paperclip', '~> 4.1'
 gem 'devise'
 gem 'textacular'
-
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'better_errors'
@@ -33,3 +33,4 @@ end
 group :test do
   gem 'shoulda-matchers'
 end
+
