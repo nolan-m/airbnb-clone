@@ -95,3 +95,8 @@ div#price-info {
 .margin-low {
   margin-bottom: 15px;
 }
+.bio_text {
+  width: 200px;
+  height: 100px;
+  margin-bottom: 10px;
+}

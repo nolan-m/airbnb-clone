@@ -23,7 +23,7 @@
     <% end %>
     <% if @user.bio.nil? %>
         <%= form_for @user, url: user_path, html: { :multipart => true }, class: "form-group"  do |f| %>
-          <%= f.text_area :bio, cols: "60", rows: "10", placeholder: "Add Bio", class: "margin-high" %>
+          <%= f.text_area :bio, cols: "60", rows: "10", placeholder: "Add Bio", class: "margin-high bio_text" %>
           <%= f.submit "Submit bio", class: "btn btn-success btn-sm block" %>
         <% end %>
     <% end %>
