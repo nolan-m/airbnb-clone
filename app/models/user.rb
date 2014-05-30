@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type =>
   ["image/jpg", "image/jpeg", "image/png"]
 
-  after_create :send_welcome_message
+  # after_create :send_welcome_message
 
   def send_welcome_message
     UserMailer.signup_confirmation(self).deliver
