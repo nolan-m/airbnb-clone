@@ -28,10 +28,10 @@ class PicturesController < ApplicationController
     @picture = Picture.new(pictures_params)
     if @picture.save
       flash[:notice] = "Picture created!"
-      redirect_to root_path
     else
-      redirect_to :back
+      flash[:notice] = "Picture upload unsucessful"
     end
+      redirect_to property_path(pictures_params[:property_id])
   end
 
   def destroy
