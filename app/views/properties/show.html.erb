@@ -39,12 +39,16 @@
  </div>
   <div id="owner-info">
    <h4>Owner:</h4>
-   <%= image_tag(@property.user.avatar(:medium), class: "img-responsive img-rounded", id: "picture") %>
+   <% if @property.user.avatar.present? %>
+     <%= image_tag(@property.user.avatar(:medium), class: "img-responsive img-rounded", id: "picture") %>
+   <% end %>
    <h4><%= link_to @property.user.name, user_path(@property.user) %></h4>
  </div>
 </div>
 <div class="col-md-6 margin-high">
-  <%= render 'carousel' %>
+  <% if @property.pictures.present? %>
+    <%= render 'carousel' %>
+  <% end %>
 </div>
 <% if current_user == @property.user %>
 <div class="col-md-3 margin-high clear-left">
