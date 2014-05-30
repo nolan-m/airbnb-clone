@@ -34,7 +34,11 @@
 <%= flash[:results] %>
 </div>
 <div class="col-md-6 margin-high">
-  <%= render 'main_carousel' %>
+  <% if @pictures.present? %>
+    <%= render 'main_carousel' %>
+    <% else %>
+    <p> No current properties.  List one to start!</p>
+  <% end %>
 </div>
 <div class="col-md-6 clear-left">
   <h1>Properties</h1>
