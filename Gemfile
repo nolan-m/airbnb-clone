@@ -12,6 +12,7 @@ gem 'jquery-turbolinks'
 gem 'paperclip', '~> 4.1'
 gem 'devise'
 gem 'textacular'
+gem 'aws-sdk'
 gem 'rails_12factor', group: :production
 
 group :development do
