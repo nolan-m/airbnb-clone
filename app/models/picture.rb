@@ -1,7 +1,9 @@
 class Picture < ActiveRecord::Base
   belongs_to :property
 
-  has_attached_file :image, :styles => { small: "100x100>", medium: "250x250#", large: "640x420#" }
+  has_attached_file :image,
+  	 :styles => { small: "100x100>", medium: "250x250#", large: "640x420#" },
+  	 :url => ":s3_domain_url"
 
   validates_attachment_content_type :image, :content_type =>
   ["image/jpg", "image/jpeg", "image/png"]
