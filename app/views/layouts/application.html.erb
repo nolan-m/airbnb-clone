@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? yield(:title)+" | Futon Palace" : "Futon Palace" %></title>
+  <title><%= content_for?(:title) ? yield(:title)+" | Airbnb" : "Airbnb" %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -27,7 +27,7 @@
       <%= link_to "Log In", new_user_session_path, class: "navbar-text pull-right" %>
     <% end %>
   </div>
-
+  
 
 <%= yield %>
 

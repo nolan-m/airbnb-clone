@@ -18,18 +18,18 @@
       </table>
     </div>
   </div>
-<div class="col-md-3 pull-right">
+<div class="col-md-4 pull-right">
   <div id="price-info">
     <p>From</p>
    <h4>$<%= @property.price %> per night</h4>
     <%= form_for @reservation, url: reservations_path do |f| %>
       <div class="form-group pull-right margin-right">
         <%= f.label :start_date %>
-        <%= f.date_field :start_date %>
+        <%= f.date_select :start_date %>
       </div>
       <div class="form-group pull-right margin-right">
         <%= f.label :end_date %>
-        <%= f.date_field :end_date %>
+        <%= f.date_select :end_date %>
       </div>
       <%= f.hidden_field :property_id, value: @property.id %>
       <% if user_signed_in? %>

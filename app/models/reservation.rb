@@ -4,7 +4,7 @@ class Reservation < ActiveRecord::Base
   belongs_to :property
   has_many :ratings
 
-  after_create :reservation_message
+  # after_create :reservation_message
   before_create :block_out
 
 
